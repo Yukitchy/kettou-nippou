@@ -55,7 +55,7 @@ function mealCalc(m) {
   const pk = win.reduce((a, b) => b.v > a.v ? b : a);
   const h2 = [...win].reverse().find(p => p.t >= m.t + 90 * MIN);
   const rise = pk.v - pre.v;
-  let say = rise >= 60 ? '主食が多かったかも。白米を減らす／野菜から' : rise >= 30 ? 'ふつう' : '緩やか。この食べ方を続ける';
+  let say = rise >= 60 ? '主食が多かったかも。白米を減らす／野菜から' : rise >= 30 ? 'ふつうの上がり方' : '緩やか。この食べ方を続ける';
   const late = h2 && h2.v >= pre.v + 30;
   return { pre: pre.v, peak: pk.v, rise, mins: Math.round((pk.t - m.t) / MIN), h2: h2 ? h2.v : null, say, late: late ? '戻りが遅い。食後に10分歩く' : '' };
 }
@@ -90,7 +90,7 @@ function render() {
     <div class="stats">
       <div class="n"><small>70〜180の割合</small><b>${Math.round(st.tir)}%</b></div>
       <div class="n"><small>推定A1c</small><b>${st.a1c.toFixed(1)}%</b></div>
-      <div class="n"><small>前日比</small>${ps ? `<em>平均 ${arrow(Math.round(st.avg) - Math.round(ps.avg))}</em><em>割合 ${arrow(Math.round(st.tir) - Math.round(ps.tir), 'pt')}</em>` : '<em>前日のデータなし</em>'}</div>
+      <div class="n"><small>前日比</small>${ps ? `<em>平均 ${arrow(Math.round(st.avg) - Math.round(ps.avg))}</em><em>割合 ${arrow(Math.round(st.tir) - Math.round(ps.tir), 'pt')}</em>` : '<em>前日なし</em>'}</div>
     </div>`;
   $('#report').innerHTML = h;
   $('#prev').onclick = () => { S.i--; render(); };

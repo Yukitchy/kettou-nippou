@@ -52,7 +52,7 @@ button{font:inherit;letter-spacing:inherit;color:inherit;cursor:pointer;backgrou
 .rise.hi b{color:var(--ink)}
 .row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:16px}
 .row b{font-size:22px}
-.cm{margin-top:14px;font-size:16px;line-height:1.6;text-wrap:pretty}
+.cm{font-weight:600;margin-top:14px;font-size:16px;line-height:1.6;text-wrap:pretty}
 .cm span{display:block}
 .ai{color:var(--sub);font-size:14px}
 
