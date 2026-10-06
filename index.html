@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>血糖の日報係</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23e8742c'/%3E%3Cpath d='M10 44 L24 30 L34 38 L54 16' fill='none' stroke='%231a1a1a' stroke-width='7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="engine/style.css">
+<script defer src="https://cdn.jsdelivr.net/npm/exifr@7.1.2/dist/lite.umd.js"></script>
+<script defer src="engine/app.js"></script>
+</head>
+<body>
+<main>
+  <p class="brand">血糖の日報係</p>
+  <section id="report" aria-live="polite"></section>
+  <section>
+    <h2>1日のカーブ</h2>
+    <div id="chart"></div>
+  </section>
+  <section>
+    <h2>食事</h2>
+    <div id="meals"></div>
+  </section>
+  <details id="inputs" open>
+    <summary><h2>データを入れる</h2></summary>
+    <div class="inbody">
+      <button id="btn-sample" type="button">サンプル3日分</button>
+      <label class="drop" id="drop-csv">
+        <input type="file" id="in-csv" accept=".csv,text/csv">
+        <b>LibreViewのCSV</b>
+        <span>ここにドロップ、またはタップして選ぶ</span>
+      </label>
+      <label class="drop" id="drop-photo">
+        <input type="file" id="in-photo" accept="image/*" multiple>
+        <b>ご飯の写真</b>
+        <span>複数OK。撮影時刻から食事の時間を決めます。写真はこの端末の外に出ません</span>
+      </label>
+      <label class="key">
+        <b>Claude APIキー（任意）</b>
+        <input type="password" id="in-key" placeholder="sk-ant-..." autocomplete="off">
+        <span>入れた時だけ、写真をClaudeに送って料理名と主食の量を判定します。キーはこの端末に保存</span>
+      </label>
+      <p id="msg" role="status"></p>
+    </div>
+  </details>
+  <p class="foot">食べ方の目安であり、医療判断ではありません。</p>
+</main>
+</body>
+</html>

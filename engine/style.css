@@ -1,0 +1,78 @@
+:root{--ink:#1a1a1a;--sub:rgba(26,26,26,.62);--tint:rgba(26,26,26,.06);--acc:#e8742c;--band:#e2f1e4;--rule:rgba(26,26,26,.14)}
+*{box-sizing:border-box}
+html{color-scheme:light}
+body{margin:0;background:#fff;color:var(--ink);font:800 16px/1.6 -apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;letter-spacing:-.02em;-webkit-font-smoothing:antialiased;word-break:auto-phrase;line-break:strict;overflow-wrap:anywhere}
+main{max-width:720px;margin:0 auto;padding:20px 20px 64px}
+section{margin-top:48px}
+h1,h2,p{margin:0}
+h1{font-size:34px;line-height:1.2}
+h2{font-size:32px;line-height:1.25;text-wrap:balance}
+.brand{font-size:14px;letter-spacing:.04em}
+.brand::before{content:"";display:inline-block;width:10px;height:10px;background:var(--acc);border-radius:50%;margin-right:8px}
+button{font:inherit;letter-spacing:inherit;color:inherit;cursor:pointer;background:none;border:0;padding:0}
+:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+
+/* 日付行 */
+.datebar{display:flex;align-items:center;gap:4px;margin:12px 0 0 -10px}
+.datebar button{width:44px;height:44px;font-size:26px;border-radius:50%;transition:background .12s}
+.datebar button:hover:not(:disabled){background:var(--tint)}
+.datebar button:disabled{opacity:.25;cursor:default}
+
+/* 数値の箱: ラベルは数値の直上に密着 */
+.n{display:block}
+.n small{display:block;font-size:13px;line-height:1.3;color:var(--sub)}
+.n b{display:block;font-size:26px;line-height:1.15;font-variant-numeric:tabular-nums}
+.hero{margin-top:20px}
+.hero b{font-size:clamp(88px,26vw,128px);line-height:1;letter-spacing:-.05em;color:var(--acc)}
+.hero small{font-size:15px;color:var(--ink)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+.stats b{font-size:28px}
+.stats em{font-style:normal;font-size:15px;color:var(--sub);display:block;line-height:1.4}
+.empty{margin-top:24px;color:var(--sub);font-size:18px;line-height:1.6}
+
+/* チャート */
+#chart{margin-top:16px;position:relative}
+#chart svg{display:block;width:100%;overflow:visible}
+#chart text{font:800 13px -apple-system,"Hiragino Sans",sans-serif;fill:var(--sub);letter-spacing:-.02em}
+#chart text.pk{fill:var(--ink);font-size:14px}
+#chart .mk{cursor:pointer}
+#chart .mk text{font-size:20px;fill:var(--ink)}
+
+/* 食事カード: 線1本だけで区切る */
+.meal{padding:24px 0;border-top:1px solid var(--rule);scroll-margin-top:12px;transition:background .4s}
+.meal:last-child{border-bottom:1px solid var(--rule)}
+.meal.flash{background:var(--band)}
+.mh{display:flex;gap:14px;align-items:center}
+.th{flex:none;width:56px;height:56px;border-radius:8px;background:var(--tint);display:grid;place-items:center;font-size:30px;overflow:hidden}
+.th img{width:100%;height:100%;object-fit:cover;display:block}
+.mh .t{font-size:13px;color:var(--sub);line-height:1.3}
+.mh .nm{font-size:18px;line-height:1.35}
+.rise{margin-top:16px}
+.rise b{font-size:56px;line-height:1;color:var(--acc);letter-spacing:-.04em}
+.rise.hi b{color:var(--ink)}
+.row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:16px}
+.row b{font-size:22px}
+.cm{margin-top:14px;font-size:16px;line-height:1.6;text-wrap:pretty}
+.cm span{display:block}
+.ai{color:var(--sub);font-size:14px}
+
+/* 入力 */
+#inputs{margin-top:56px;border-top:1px solid var(--rule);padding-top:20px}
+#inputs summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between}
+#inputs summary::-webkit-details-marker{display:none}
+#inputs summary::after{content:"+";font-size:32px;line-height:1}
+#inputs[open] summary::after{content:"\2212"}
+.inbody{display:flex;flex-direction:column;gap:16px;margin-top:20px}
+#btn-sample{align-self:stretch;min-height:56px;background:var(--acc);color:var(--ink);font-size:20px;border-radius:999px;transition:transform .12s cubic-bezier(.34,1.56,.64,1)}
+#btn-sample:hover{transform:translateY(-2px)}
+#btn-sample:active{transform:scale(.98)}
+.drop,.key{position:relative;display:block;background:var(--tint);border-radius:16px;padding:18px 18px 16px;cursor:pointer}
+.drop.on{background:var(--band)}
+.drop input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer}
+.drop b,.key b{display:block;font-size:18px}
+.drop span,.key span{display:block;font-size:14px;color:var(--sub);line-height:1.5;margin-top:2px}
+.key{cursor:default}
+.key input{display:block;width:100%;margin:8px 0 6px;font:inherit;font-size:16px;padding:12px;border:1px solid var(--rule);border-radius:8px;background:#fff;color:var(--ink)}
+#msg{font-size:14px;color:var(--sub);min-height:1.5em}
+.foot{margin-top:32px;font-size:13px;color:var(--sub)}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
