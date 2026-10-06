@@ -169,7 +169,7 @@ async function loadCsv(file) {
   catch (e) { msg(e.message); }
 }
 async function shotTime(f) {
-  try { const x = window.exifr && await exifr.parse(f, ['DateTimeOriginal']); if (x && x.DateTimeOriginal) return +x.DateTimeOriginal; } catch (e) {}
+  try { const x = window.exifr && await exifr.parse(f); if (x && x.DateTimeOriginal) return +x.DateTimeOriginal; } catch (e) {}
   return f.lastModified;
 }
 async function ask(f) { // キーがある時だけ写真をClaudeへ送る
