@@ -88,4 +88,5 @@ h2{font-size:28px}
 .th{border-radius:50%;background:#fff}
 .n em:first-of-type{order:2}
 .n em:last-of-type{order:1}
+.stats em{color:var(--ink);font-size:16px}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
