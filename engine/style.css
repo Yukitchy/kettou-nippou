@@ -89,4 +89,13 @@ h2{font-size:28px}
 .n em:first-of-type{order:2}
 .n em:last-of-type{order:1}
 .stats em{color:var(--ink);font-size:16px}
+/* 下メニュー（固定） */
+main{padding-bottom:calc(120px + env(safe-area-inset-bottom))}
+#report,#s-curve,#s-meals,#inputs{scroll-margin-top:12px}
+.tabbar{position:fixed;left:50%;bottom:0;transform:translateX(-50%);width:100%;max-width:720px;display:flex;background:rgba(255,255,255,.9);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-top:1px solid var(--rule);padding-bottom:env(safe-area-inset-bottom);z-index:9}
+.tabbar a{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;min-height:56px;padding:9px 0 11px;font-size:12px;color:var(--sub);text-decoration:none}
+.tabbar svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.tabbar a[aria-current]{color:var(--ink)}
+.tabbar a[aria-current] svg{stroke:var(--acc)}
+@media(min-width:900px){.tabbar{bottom:20px;max-width:440px;padding:0 8px;border:1px solid var(--rule);border-radius:999px;box-shadow:0 12px 32px -16px rgba(29,43,54,.3)}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}

@@ -14,11 +14,11 @@
 <main>
   <p class="brand">血糖の日報係</p>
   <section id="report" aria-live="polite"></section>
-  <section>
+  <section id="s-curve">
     <h2>1日のカーブ</h2>
     <div id="chart"></div>
   </section>
-  <section>
+  <section id="s-meals">
     <h2>食事</h2>
     <div id="meals"></div>
   </section>
@@ -46,5 +46,28 @@
   </details>
   <p class="foot">食べ方の目安であり、医療判断ではありません。</p>
 </main>
+<nav class="tabbar" aria-label="ページ内">
+  <a href="#report" aria-current="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="14" r="4"/><path d="M12 4v3M4.9 8.9l2.1 2.1M19.1 8.9L17 11M2 20h20"/></svg>きのう</a>
+  <a href="#s-curve"><svg viewBox="0 0 24 24"><path d="M3 17l5-6 4 3 8-9"/></svg>カーブ</a>
+  <a href="#s-meals"><svg viewBox="0 0 24 24"><path d="M4 11h16a8 8 0 0 1-16 0z"/><path d="M8 7c0-1.5 1-2 1-3M12 7c0-1.5 1-2 1-3M16 7c0-1.5 1-2 1-3"/></svg>食事</a>
+  <a href="#inputs"><svg viewBox="0 0 24 24"><path d="M12 4v11M7 10l5 5 5-5M4 20h16"/></svg>入れる</a>
+</nav>
+<script>
+(function(){
+  var links=[].slice.call(document.querySelectorAll('.tabbar a'));
+  function mark(id){links.forEach(function(a){a.getAttribute('href')==='#'+id?a.setAttribute('aria-current','true'):a.removeAttribute('aria-current')})}
+  links.forEach(function(a){a.addEventListener('click',function(e){
+    var id=a.getAttribute('href').slice(1),el=document.getElementById(id);
+    e.preventDefault(); if(id==='inputs')el.open=true;
+    (id==='report'?window.scrollTo({top:0,behavior:'smooth'}):el.scrollIntoView({behavior:'smooth',block:'start'})); mark(id);
+  })});
+  addEventListener('scroll',function(){
+    var cur='report',y=innerHeight*.35;
+    links.forEach(function(a){var el=document.getElementById(a.getAttribute('href').slice(1)); if(el&&el.getBoundingClientRect().top<y)cur=el.id});
+    if(innerHeight+scrollY>=document.documentElement.scrollHeight-4)cur='inputs';
+    mark(cur);
+  },{passive:true});
+})();
+</script>
 </body>
 </html>
