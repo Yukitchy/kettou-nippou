@@ -1,4 +1,4 @@
-:root{--ink:#1a1a1a;--sub:rgba(26,26,26,.62);--tint:rgba(26,26,26,.06);--acc:#e8742c;--band:#e2f1e4;--rule:rgba(26,26,26,.14)}
+:root{--ink:#1d2b36;--sub:rgba(29,43,54,.6);--tint:rgba(29,43,54,.05);--acc:#e3843c;--band:#e2edf5;--rule:rgba(29,43,54,.12)}
 *{box-sizing:border-box}
 html{color-scheme:light}
 body{margin:0;background:#fff;color:var(--ink);font:800 16px/1.6 -apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;letter-spacing:-.02em;-webkit-font-smoothing:antialiased;word-break:auto-phrase;line-break:strict;overflow-wrap:anywhere}
@@ -75,4 +75,17 @@ button{font:inherit;letter-spacing:inherit;color:inherit;cursor:pointer;backgrou
 .key input{display:block;width:100%;margin:8px 0 6px;font:inherit;font-size:16px;padding:12px;border:1px solid var(--rule);border-radius:8px;background:#fff;color:var(--ink)}
 #msg{font-size:14px;color:var(--sub);min-height:1.5em}
 .foot{margin-top:32px;font-size:13px;color:var(--sub)}
+/* モチーフ: 朝の天気予報（2026-10-07 ユウキ選択） */
+#report{margin-top:16px;padding:12px 20px 24px;border-radius:24px;background:linear-gradient(180deg,#eaf2f8,#fcf1e7)}
+.n{display:flex;flex-direction:column-reverse}
+.n small{margin-top:6px}
+.hero{margin-top:8px}
+.stats{margin-top:20px}
+h2{font-size:28px}
+.meal{border:0;margin-top:12px;padding:20px;border-radius:20px;background:#f3f7fa}
+.meal:last-child{border:0}
+.meal.flash{background:var(--band)}
+.th{border-radius:50%;background:#fff}
+.n em:first-of-type{order:2}
+.n em:last-of-type{order:1}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
