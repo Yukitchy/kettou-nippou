@@ -137,10 +137,10 @@ function drawChart(k) {
       const pk = w.find(p => p.v === c.peak);
       s += `<circle cx="${X(pk.t)}" cy="${Y(pk.v)}" r="5" fill="var(--acc)"/><text class="pk" x="${Math.min(X(pk.t), W - 22)}" y="${Y(pk.v) - 10}" text-anchor="middle">${c.rise >= 0 ? '+' : ''}${c.rise}</text>`;
     }
-    const mx = Math.min(Math.max(x, 22), W - 22);
+    const mx = Math.min(Math.max(x, 26), W - 26);
     s += `<g class="mk" data-id="${m.id}" role="button" aria-label="${esc(m.name)}">`
-      + (m.thumb ? `<clipPath id="c${m.id}"><circle cx="${mx}" cy="24" r="18"/></clipPath><image href="${m.thumb}" x="${mx - 18}" y="6" width="36" height="36" preserveAspectRatio="xMidYMid slice" clip-path="url(#c${m.id})"/><circle cx="${mx}" cy="24" r="18" fill="none" stroke="var(--acc)" stroke-width="2"/>`
-        : `<circle cx="${mx}" cy="24" r="19" fill="#fff" stroke="var(--acc)" stroke-width="2"/><text x="${mx}" y="31" text-anchor="middle">${esc(m.emoji || '🍽️')}</text>`)
+      + (m.thumb ? `<clipPath id="c${m.id}"><circle cx="${mx}" cy="26" r="22"/></clipPath><image href="${m.thumb}" x="${mx - 22}" y="4" width="44" height="44" preserveAspectRatio="xMidYMid slice" clip-path="url(#c${m.id})"/><circle cx="${mx}" cy="26" r="22" fill="none" stroke="var(--acc)" stroke-width="2"/>`
+        : `<circle cx="${mx}" cy="26" r="22" fill="#fff" stroke="var(--acc)" stroke-width="2"/><text x="${mx}" y="33" text-anchor="middle">${esc(m.emoji || '🍽️')}</text>`)
       + `</g>`;
   });
   el.innerHTML = s + '</svg>';
