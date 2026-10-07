@@ -3,54 +3,63 @@
   "date": "2026-10-03",
   "time": "07:30",
   "name": "トースト＋目玉焼き",
-  "emoji": "🍞"
+  "emoji": "🍞",
+  "photo": "packs/sample/photos/toast.jpg"
  },
  {
   "date": "2026-10-03",
   "time": "12:30",
   "name": "白米大盛りのカツ丼",
-  "emoji": "🍚"
+  "emoji": "🍚",
+  "photo": "packs/sample/photos/katsudon.jpg"
  },
  {
   "date": "2026-10-03",
   "time": "19:00",
   "name": "ラーメン",
-  "emoji": "🍜"
+  "emoji": "🍜",
+  "photo": "packs/sample/photos/ramen.jpg"
  },
  {
   "date": "2026-10-04",
   "time": "07:30",
   "name": "ヨーグルト＋バナナ",
-  "emoji": "🍌"
+  "emoji": "🍌",
+  "photo": "packs/sample/photos/yogurt.jpg"
  },
  {
   "date": "2026-10-04",
   "time": "12:30",
   "name": "サラダ先の焼き魚定食",
-  "emoji": "🥗"
+  "emoji": "🥗",
+  "photo": "packs/sample/photos/fish.jpg"
  },
  {
   "date": "2026-10-04",
   "time": "19:00",
   "name": "ナポリタン",
-  "emoji": "🍝"
+  "emoji": "🍝",
+  "photo": "packs/sample/photos/napolitan.jpg"
  },
  {
   "date": "2026-10-05",
   "time": "07:30",
   "name": "おにぎり2個",
-  "emoji": "🍙"
+  "emoji": "🍙",
+  "photo": "packs/sample/photos/onigiri.jpg"
  },
  {
   "date": "2026-10-05",
   "time": "12:30",
   "name": "サンドイッチ",
-  "emoji": "🥪"
+  "emoji": "🥪",
+  "photo": "packs/sample/photos/sandwich.jpg"
  },
  {
   "date": "2026-10-05",
   "time": "19:30",
   "name": "焼肉＋白ごはん",
-  "emoji": "🥩"
+  "emoji": "🥩",
+  "photo": "packs/sample/photos/yakiniku.jpg"
  }
 ]

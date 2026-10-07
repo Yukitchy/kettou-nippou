@@ -159,7 +159,7 @@ async function loadSample() {
   try {
     const [csv, ml] = await Promise.all([fetch('packs/sample/sample.csv').then(r => r.text()), fetch('packs/sample/meals.json').then(r => r.json())]);
     S.pts = parseCsv(csv);
-    S.meals = S.meals.filter(m => m.thumb).concat(ml.map(m => mk({ t: new Date(`${m.date}T${m.time}:00`).getTime(), name: m.name, emoji: m.emoji })));
+    S.meals = S.meals.filter(m => m.thumb).concat(ml.map(m => mk({ t: new Date(`${m.date}T${m.time}:00`).getTime(), name: m.name, emoji: m.emoji, thumb: m.photo })));
     S.i = 1e9; setData(); $('#inputs').open = false;
     msg(`サンプル ${S.pts.length} 点を読み込みました`);
   } catch (e) { msg('サンプルを読めませんでした。サーバー経由（http）で開いてください: ' + e.message); }
